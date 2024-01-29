@@ -1,0 +1,57 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<OutputType>WinExe</OutputType>
+		<TargetFramework>net7.0-windows</TargetFramework>
+		<Nullable>enable</Nullable>
+		<UseWindowsForms>true</UseWindowsForms>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<PublishAot>true</PublishAot>
+		<_SuppressWinFormsTrimError>true</_SuppressWinFormsTrimError>
+		<BuiltInComInteropSupport>true</BuiltInComInteropSupport>
+		<CustomResourceTypesSupport>true</CustomResourceTypesSupport>
+		<WebDriverPlatform>win32</WebDriverPlatform>
+		<PublishChromeDriver>true</PublishChromeDriver>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="2captcha-csharp" Version="1.3.2" />
+		<PackageReference Include="DotNetSeleniumExtras.WaitHelpers" Version="3.11.0" />
+		<PackageReference Include="Faker.Net" Version="2.0.154" />
+		<PackageReference Include="GoogleSheetsWrapper" Version="2.0.10" />
+		<PackageReference Include="OpenQA.Selenium.Chrome.ChromeDriverExtensions" Version="1.2.0" />
+		<PackageReference Include="RestSharp" Version="110.2.0" />
+		<PackageReference Include="Selenium.Support" Version="4.16.2" />
+		<PackageReference Include="Selenium.UndetectedChromeDriver" Version="1.1.1" />
+		<PackageReference Include="Selenium.WebDriver" Version="4.17.0" />
+		<PackageReference Include="Selenium.WebDriver.ChromeDriver" Version="121.0.6167.8500" />
+		<PackageReference Include="SKGL" Version="2.0.5.3" />
+		<PackageReference Include="System.Data.SQLite" Version="1.0.118" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <None Update="ExportData\exportError.txt">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </None>
+	  <None Update="Properties\Settings.settings">
+	    <Generator>SettingsSingleFileGenerator</Generator>
+	    <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+	  </None>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Reference Include="FoxLearn.License">
+	    <HintPath>..\thuvien\FoxLearn.License.dll</HintPath>
+	    <Private>True</Private>
+	  </Reference>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Compile Update="Properties\Settings.Designer.cs">
+	    <DesignTimeSharedInput>True</DesignTimeSharedInput>
+	    <AutoGen>True</AutoGen>
+	    <DependentUpon>Settings.settings</DependentUpon>
+	  </Compile>
+	</ItemGroup>
+
+</Project>
